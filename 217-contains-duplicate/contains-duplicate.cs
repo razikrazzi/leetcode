@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Solution
 {
     public bool ContainsDuplicate(int[] nums)
     {
-        HashSet<int> unique = new HashSet<int>(nums);
+        var value = nums.Distinct();
 
-        return unique.Count < nums.Length;
+        return value.Count() < nums.Length;
     }
 }
