@@ -1,12 +1,14 @@
+using System.Linq;
 public class Solution {
     public int[] RunningSum(int[] nums) {
       int sum = 0 ;
-      int[] result = new int[nums.Length];
+     
+     var arr = nums.Select(n => {
+        sum += n;
+        return sum;
+     }).ToArray();
 
-      for(int i=0 ; i<nums.Length;i++){
-        sum += nums[i];
-        result[i] = sum;
-      }
-      return result;
+
+      return arr;
 }
 }
